@@ -22,7 +22,7 @@ function do_backup
 	DISK=${option}
 	FILE=raspbian_backup_image`date +%d%m%y`.gz
 	echo "Starting backup, this may take a long time.... just wait please!"
-	sudo dd bs=4M if=${DISK} | gzip > raspbian_backup_image`date +%d%m%y`.gz
+	sudo dd bs=4M if=${DISK} status=progress | gzip > raspbian_backup_image`date +%y-%m-%d-%hh-%MM`.gz
 	echo "Backup done and saved with file ${FILE}"
 	echo "Bye!"
 	exit 0
